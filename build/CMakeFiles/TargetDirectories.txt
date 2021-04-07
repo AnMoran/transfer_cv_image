@@ -1,0 +1,3 @@
+/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/rebuild_cache.dir
+/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/edit_cache.dir
+/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/demo.dir
