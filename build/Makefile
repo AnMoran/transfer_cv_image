@@ -142,6 +142,33 @@ demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
+src/common.o: src/common.cpp.o
+
+.PHONY : src/common.o
+
+# target to build an object file
+src/common.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/common.cpp.o
+.PHONY : src/common.cpp.o
+
+src/common.i: src/common.cpp.i
+
+.PHONY : src/common.i
+
+# target to preprocess a source file
+src/common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/common.cpp.i
+.PHONY : src/common.cpp.i
+
+src/common.s: src/common.cpp.s
+
+.PHONY : src/common.s
+
+# target to generate assembly for a file
+src/common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/common.cpp.s
+.PHONY : src/common.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -196,6 +223,33 @@ src/norm_4pt.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/norm_4pt.cpp.s
 .PHONY : src/norm_4pt.cpp.s
 
+src/norm_5pt.o: src/norm_5pt.cpp.o
+
+.PHONY : src/norm_5pt.o
+
+# target to build an object file
+src/norm_5pt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/norm_5pt.cpp.o
+.PHONY : src/norm_5pt.cpp.o
+
+src/norm_5pt.i: src/norm_5pt.cpp.i
+
+.PHONY : src/norm_5pt.i
+
+# target to preprocess a source file
+src/norm_5pt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/norm_5pt.cpp.i
+.PHONY : src/norm_5pt.cpp.i
+
+src/norm_5pt.s: src/norm_5pt.cpp.s
+
+.PHONY : src/norm_5pt.s
+
+# target to generate assembly for a file
+src/norm_5pt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/norm_5pt.cpp.s
+.PHONY : src/norm_5pt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -205,12 +259,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... demo"
+	@echo "... src/common.o"
+	@echo "... src/common.i"
+	@echo "... src/common.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/norm_4pt.o"
 	@echo "... src/norm_4pt.i"
 	@echo "... src/norm_4pt.s"
+	@echo "... src/norm_5pt.o"
+	@echo "... src/norm_5pt.i"
+	@echo "... src/norm_5pt.s"
 .PHONY : help
 
 

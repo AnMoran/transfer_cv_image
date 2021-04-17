@@ -65,13 +65,13 @@ void Gauss(double A[][9], int equ, int var, double *coeffs)
  *        cij - coeffs[i][j], coeffs[2][2] = 1
  *   (ui, vi) - rectangle vertices
  */
-void AB_getPerspectiveTransform(std::vector<ABPoint2f> src, std::vector<ABPoint2f> dst,
+void AB_getPerspectiveTransform(std::vector<std::vector<float>> src, std::vector<std::vector<float>> dst,
                                 std::vector<std::vector<float> > &M)
 {
-    double x0 = src[0].x, x1 = src[1].x, x2 = src[3].x, x3 = src[2].x;
-    double y0 = src[0].y, y1 = src[1].y, y2 = src[3].y, y3 = src[2].y;
-    double u0 = dst[0].x, u1 = dst[1].x, u2 = dst[3].x, u3 = dst[2].x;
-    double v0 = dst[0].y, v1 = dst[1].y, v2 = dst[3].y, v3 = dst[2].y;
+    double x0 = src[0][0], x1 = src[1][0], x2 = src[3][0], x3 = src[2][0];
+    double y0 = src[0][1], y1 = src[1][1], y2 = src[3][1], y3 = src[2][1];
+    double u0 = dst[0][0], u1 = dst[1][0], u2 = dst[3][0], u3 = dst[2][0];
+    double v0 = dst[0][1], v1 = dst[1][1], v2 = dst[3][1], v3 = dst[2][1];
     double A[8][9] = {
         {x0, y0, 1, 0, 0, 0, -x0 * u0, -y0 * u0, u0},
         {x1, y1, 1, 0, 0, 0, -x1 * u1, -y1 * u1, u1},
@@ -98,92 +98,5 @@ void AB_getPerspectiveTransform(std::vector<ABPoint2f> src, std::vector<ABPoint2
     delete []coeffs;
 }
 
-//rgbrgbrgb……图转换为rrrrrgggggbbbbb的float数组
-void RGB2float(const unsigned char *RGBImage, int width, int height, float *dstImg)
-{
-    for (int i = 0; i < width * height; i++)
-    {
-        dstImg[i] = RGBImage[3 * i];
-        dstImg[i + width * height] = RGBImage[3 * i + 1];
-        dstImg[i + 2 * width * height] = RGBImage[3 * i + 2];
-    }
-}
 
-//rrrrrgggggbbbbb的float数组转换为rgbrgbrgb……图
-void Float2RGB(const float *floatImage, int width, int height, unsigned char *dstImg)
-{
-    for (int i = 0; i < width * height; i++)
-    {
-        dstImg[3 * i] = floatImage[i];
-        dstImg[3 * i + 1] = floatImage[i + width * height];
-        dstImg[3 * i + 2] = floatImage[i + 2 * width * height];
-    }
-}
 
-//透视变换，输入多通道数据是rrrrrrggggggbbbbb，不是rgbrgbrgb
-void warpAffineLinear(const float *pfSrcImg, float *pfDstImg,
-                      int nSrcWidth, int nSrcHeight, 
-                      int nDstWidth,int nDstHeight, int nChannels, std::vector<std::vector<float> > M)
-{
-    int i, j;
-    float row = 0.0f;
-    float col = 0.0f;
-    float *pDstImg = pfDstImg;
-    int m = (nSrcHeight - 1) * nSrcWidth;
-
-    float D = M[0][0] * M[1][1] - M[0][1] * M[1][0];
-    D = D != 0 ? 1.0f / D : 0.0f;
-    float A11 = M[1][1] * D, A22 = M[0][0] * D;
-    M[0][0] = A11;
-    M[0][1] *= -D;
-    M[1][0] *= -D;
-    M[1][1] = A22;
-    float b1 = -M[0][0] * M[0][2] - M[0][1] * M[1][2];
-    float b2 = -M[1][0] * M[0][2] - M[1][1] * M[1][2];
-    M[0][2] = b1;
-    M[1][2] = b2;
-
-    memset(pDstImg, 0, sizeof(float) * nDstWidth * nDstHeight * nChannels);
-
-    int nDstWH = nDstWidth * nDstHeight;
-    int nSrcWH = nSrcWidth * nSrcHeight;
-    float *pDstImg2 = pfDstImg + nDstWH;
-    float *pDstImg3 = pDstImg2 + nDstWH;
-    for (i = 0; i < nDstHeight; i++)
-    {
-        for (j = 0; j < nDstWidth; j++)
-        {
-            col = M[0][0] * j + M[0][1] * i + M[0][2];
-            row = M[1][0] * j + M[1][1] * i + M[1][2];
-            if (row < 0 || col < 0 || row > nSrcHeight - 1 || col > nSrcWidth - 1)
-            {
-                pDstImg++;
-                pDstImg2++;
-                pDstImg3++;
-                continue;
-            }
-            else if (row < nSrcHeight - 1)
-            {
-                float x = row - (int)row;
-                float y = col - (int)col;
-                float a = (1 - x) * (1 - y);
-                float b = (1 - x) * y;
-                float c = x * (1 - y);
-                float d = x * y;
-                int offset = (int)row * nSrcWidth + (int)col;
-                float *pSrcImg = (float *)pfSrcImg + offset;
-                float *pSrcImg2 = (float *)pfSrcImg + offset + nSrcWH;
-                float *pSrcImg3 = (float *)pfSrcImg + offset + nSrcWH * 2;
-                *pDstImg++ = (float)((float)pSrcImg[0] * a + (float)pSrcImg[1] * b + (float)pSrcImg[nSrcWidth] * c + (float)pSrcImg[nSrcWidth + 1] * d);
-                *pDstImg2++ = (float)((float)pSrcImg2[0] * a + (float)pSrcImg2[1] * b + (float)pSrcImg2[nSrcWidth] * c + (float)pSrcImg2[nSrcWidth + 1] * d);
-                *pDstImg3++ = (float)((float)pSrcImg3[0] * a + (float)pSrcImg3[1] * b + (float)pSrcImg3[nSrcWidth] * c + (float)pSrcImg3[nSrcWidth + 1] * d);
-            }
-            else
-            {
-                *pDstImg++ = (float)(pfSrcImg[m + (int)col]);
-                *pDstImg2++ = (float)(pfSrcImg[m + (int)col + nSrcWH]);
-                *pDstImg2++ = (float)(pfSrcImg[m + (int)col + nSrcWH * 2]);
-            }
-        }
-    }
-}

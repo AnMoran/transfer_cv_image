@@ -89,9 +89,22 @@ CMakeFiles/demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangpengyuan/private/transfer_cv_image/src/main.cpp -o CMakeFiles/demo.dir/src/main.cpp.s
 
+CMakeFiles/demo.dir/src/common.cpp.o: CMakeFiles/demo.dir/flags.make
+CMakeFiles/demo.dir/src/common.cpp.o: ../src/common.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/demo.dir/src/common.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/common.cpp.o -c /Users/wangpengyuan/private/transfer_cv_image/src/common.cpp
+
+CMakeFiles/demo.dir/src/common.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/common.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangpengyuan/private/transfer_cv_image/src/common.cpp > CMakeFiles/demo.dir/src/common.cpp.i
+
+CMakeFiles/demo.dir/src/common.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/common.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangpengyuan/private/transfer_cv_image/src/common.cpp -o CMakeFiles/demo.dir/src/common.cpp.s
+
 CMakeFiles/demo.dir/src/norm_4pt.cpp.o: CMakeFiles/demo.dir/flags.make
 CMakeFiles/demo.dir/src/norm_4pt.cpp.o: ../src/norm_4pt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/demo.dir/src/norm_4pt.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/demo.dir/src/norm_4pt.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/norm_4pt.cpp.o -c /Users/wangpengyuan/private/transfer_cv_image/src/norm_4pt.cpp
 
 CMakeFiles/demo.dir/src/norm_4pt.cpp.i: cmake_force
@@ -102,16 +115,33 @@ CMakeFiles/demo.dir/src/norm_4pt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/norm_4pt.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangpengyuan/private/transfer_cv_image/src/norm_4pt.cpp -o CMakeFiles/demo.dir/src/norm_4pt.cpp.s
 
+CMakeFiles/demo.dir/src/norm_5pt.cpp.o: CMakeFiles/demo.dir/flags.make
+CMakeFiles/demo.dir/src/norm_5pt.cpp.o: ../src/norm_5pt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/demo.dir/src/norm_5pt.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/norm_5pt.cpp.o -c /Users/wangpengyuan/private/transfer_cv_image/src/norm_5pt.cpp
+
+CMakeFiles/demo.dir/src/norm_5pt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/norm_5pt.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangpengyuan/private/transfer_cv_image/src/norm_5pt.cpp > CMakeFiles/demo.dir/src/norm_5pt.cpp.i
+
+CMakeFiles/demo.dir/src/norm_5pt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/norm_5pt.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangpengyuan/private/transfer_cv_image/src/norm_5pt.cpp -o CMakeFiles/demo.dir/src/norm_5pt.cpp.s
+
 # Object files for target demo
 demo_OBJECTS = \
 "CMakeFiles/demo.dir/src/main.cpp.o" \
-"CMakeFiles/demo.dir/src/norm_4pt.cpp.o"
+"CMakeFiles/demo.dir/src/common.cpp.o" \
+"CMakeFiles/demo.dir/src/norm_4pt.cpp.o" \
+"CMakeFiles/demo.dir/src/norm_5pt.cpp.o"
 
 # External object files for target demo
 demo_EXTERNAL_OBJECTS =
 
 demo: CMakeFiles/demo.dir/src/main.cpp.o
+demo: CMakeFiles/demo.dir/src/common.cpp.o
 demo: CMakeFiles/demo.dir/src/norm_4pt.cpp.o
+demo: CMakeFiles/demo.dir/src/norm_5pt.cpp.o
 demo: CMakeFiles/demo.dir/build.make
 demo: /usr/local/lib/libopencv_gapi.4.5.1.dylib
 demo: /usr/local/lib/libopencv_stitching.4.5.1.dylib
@@ -168,7 +198,7 @@ demo: /usr/local/lib/libopencv_photo.4.5.1.dylib
 demo: /usr/local/lib/libopencv_imgproc.4.5.1.dylib
 demo: /usr/local/lib/libopencv_core.4.5.1.dylib
 demo: CMakeFiles/demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,8 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/wangpengyuan/private/transfer_cv_image/src/common.cpp" "/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/demo.dir/src/common.cpp.o"
   "/Users/wangpengyuan/private/transfer_cv_image/src/main.cpp" "/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/demo.dir/src/main.cpp.o"
   "/Users/wangpengyuan/private/transfer_cv_image/src/norm_4pt.cpp" "/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/demo.dir/src/norm_4pt.cpp.o"
+  "/Users/wangpengyuan/private/transfer_cv_image/src/norm_5pt.cpp" "/Users/wangpengyuan/private/transfer_cv_image/build/CMakeFiles/demo.dir/src/norm_5pt.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

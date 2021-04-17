@@ -24,7 +24,9 @@ endif (NOT OpenCV_FOUND)
 
 set(SRC
         src/main.cpp
+        src/common.cpp
         src/norm_4pt.cpp
+        src/norm_5pt.cpp
         )
 
 add_executable(demo ${SRC})
